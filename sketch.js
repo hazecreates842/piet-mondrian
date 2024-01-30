@@ -14,10 +14,12 @@ function setup(){
 
     const cellNumber = 10;
 
+const possibleCellSizes = [squareSize, 2 * squareSize, 3 * squareSize]
+
     const width = squareSize;
     const height = squareSize;
 
-    const canvasSize = cellNumber * squareSize;
+    const canvasSize = 800;
     createCanvas(canvasSize, canvasSize);
     background(220);
 
@@ -26,6 +28,9 @@ function setup(){
 
     while(y < canvasSize){
         x = 0;
+
+        const actualHeight = random(possibleCellSizes);
+
         while(x < canvasSize){
     
         const colorCode = random(possibleColors)
@@ -33,14 +38,15 @@ function setup(){
 
 
         fill(myColour);
+        const actualWidth = random(possibleCellSizes);
 
         // rect(x, y, width, height)
-        rect(x, y, width)
+        rect(x, y, actualWidth, actualHeight)
 
-        x = x + width;
+        x = x + actualWidth;
         
         }
-        y = y + height;
+        y = y + actualHeight;
     }
 }
 
