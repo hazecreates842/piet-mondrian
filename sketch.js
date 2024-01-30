@@ -7,12 +7,13 @@ function setup(){
         // blue  #0061FF
         // white   #FFFFFF
         // black  #000000
+        //darkgray #404040
     ];
 
 
-    const squareSize = 60;
+    const squareSize = 50;
 
-    const cellNumber = 10;
+    const cellNumber = 5;
 
 const possibleCellSizes = [squareSize, 2 * squareSize, 3 * squareSize]
 
@@ -20,8 +21,12 @@ const possibleCellSizes = [squareSize, 2 * squareSize, 3 * squareSize]
     const height = squareSize;
 
     const canvasSize = 800;
+
+    const borderColor = color("#404040");
+    
+
     createCanvas(canvasSize, canvasSize);
-    background(220);
+    // background(220);
 
     let x = 0;
     let y = 0;
@@ -29,7 +34,8 @@ const possibleCellSizes = [squareSize, 2 * squareSize, 3 * squareSize]
     while(y < canvasSize){
         x = 0;
 
-        const actualHeight = random(possibleCellSizes);
+        let actualHeight = random(possibleCellSizes);
+        if(y + height > canvasSize) actualHeight = canvasSize - y;
 
         while(x < canvasSize){
     
@@ -38,7 +44,11 @@ const possibleCellSizes = [squareSize, 2 * squareSize, 3 * squareSize]
 
 
         fill(myColour);
-        const actualWidth = random(possibleCellSizes);
+        stroke(borderColor);
+        strokeWeight(10);
+
+        let actualWidth = random(possibleCellSizes);
+        if(x + width > canvasSize) actualWidth = canvasSize - x;
 
         // rect(x, y, width, height)
         rect(x, y, actualWidth, actualHeight)
