@@ -2,7 +2,6 @@ function setup(){
 
     const squareSize = 15;
 
-// number of cells of the grid
     const cellNumber = 15;
 
 
@@ -18,22 +17,18 @@ for(let row = 0; row < cellNumber; row++) {
     
         const myColour = color(red, green, blue);
 
-    
-        // fill(myColour);
 
         fill(myColour);
 
-
-        // calculate horizontal position in pixels
         const x = row * squareSize;
     
-        // calculate verticle position in pixels
         const y = column * squareSize;
 
         const width = squareSize;
         const height = squareSize;
 
-        square(x, y, width)
+        // rect(x, y, width, height)
+        rect(x, y, width)
         }
     }
 }
