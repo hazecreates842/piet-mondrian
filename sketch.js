@@ -15,10 +15,7 @@ function setup(){
 
     const cellNumber = 5;
 
-const possibleCellSizes = [squareSize, 2 * squareSize, 3 * squareSize]
-
-    const width = squareSize;
-    const height = squareSize;
+    const possibleCellSizes = [squareSize, squareSize , squareSize, 3 * squareSize, 4 * squareSize, 2 * squareSize];
 
     const canvasSize = 800;
 
@@ -35,7 +32,7 @@ const possibleCellSizes = [squareSize, 2 * squareSize, 3 * squareSize]
         x = 0;
 
         let actualHeight = random(possibleCellSizes);
-        if(y + height > canvasSize) actualHeight = canvasSize - y;
+        if(y + actualHeight > canvasSize) actualHeight = canvasSize - y;
 
         while(x < canvasSize){
     
@@ -48,7 +45,7 @@ const possibleCellSizes = [squareSize, 2 * squareSize, 3 * squareSize]
         strokeWeight(10);
 
         let actualWidth = random(possibleCellSizes);
-        if(x + width > canvasSize) actualWidth = canvasSize - x;
+        if(x + actualWidth > canvasSize) actualWidth = canvasSize - x;
 
         // rect(x, y, width, height)
         rect(x, y, actualWidth, actualHeight)
@@ -56,6 +53,7 @@ const possibleCellSizes = [squareSize, 2 * squareSize, 3 * squareSize]
         x = x + actualWidth;
         
         }
+
         y = y + actualHeight;
     }
 }
