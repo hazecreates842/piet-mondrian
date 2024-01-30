@@ -14,33 +14,33 @@ function setup(){
 
     const cellNumber = 10;
 
+    const width = squareSize;
+    const height = squareSize;
 
     const canvasSize = cellNumber * squareSize;
     createCanvas(canvasSize, canvasSize);
-    background(200)
+    background(220);
 
-for(let row = 0; row < cellNumber; row++) {
-    for(let column = 0; column < cellNumber; column++){
-        const red = random(255);
-        const green = random(255);
-        const blue = random(255);
+    let x = 0;
+    let y = 0;
 
+    while(y < canvasSize){
+        x = 0;
+        while(x < canvasSize){
+    
         const colorCode = random(possibleColors)
         const myColour = color(colorCode);
 
 
         fill(myColour);
 
-        const x = row * squareSize;
-    
-        const y = column * squareSize;
-
-        const width = squareSize;
-        const height = squareSize;
-
         // rect(x, y, width, height)
         rect(x, y, width)
+
+        x = x + width;
+        
         }
+        y = y + height;
     }
 }
 
