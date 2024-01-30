@@ -1,8 +1,18 @@
 function setup(){
 
-    const squareSize = 15;
 
-    const cellNumber = 15;
+    const possibleColors = [ "#FF4013", "#FFFC41", "#0061FF", "#FFFFFF", "#000000"
+        // red    #FF4013
+        // yellow #FFFC41
+        // blue  #0061FF
+        // white   #FFFFFF
+        // black  #000000
+    ];
+
+
+    const squareSize = 60;
+
+    const cellNumber = 10;
 
 
     const canvasSize = cellNumber * squareSize;
@@ -14,8 +24,9 @@ for(let row = 0; row < cellNumber; row++) {
         const red = random(255);
         const green = random(255);
         const blue = random(255);
-    
-        const myColour = color(red, green, blue);
+
+        const colorCode = random(possibleColors)
+        const myColour = color(colorCode);
 
 
         fill(myColour);
